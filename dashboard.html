@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Dashboard - UsedCar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="dashboard-header-content">
+            <div class="dashboard-header-left">
+                <button class="dashboard-menu-toggle" id="dashboardMenuToggle" title="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="dashboard-logo">
+                    <i class="fas fa-car"></i>
+                    <span>UsedCar</span>
+                </div>
+            </div>
+            <div class="dashboard-header-right">
+                <button type="button" class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon" id="darkModeIcon"></i>
+                </button>
+                <div class="header-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="header-notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="header-user">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-role">Buyer</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Sidebar Overlay -->
+    <div class="dashboard-sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Side Navigation -->
+        <aside class="dashboard-sidebar" id="dashboardSidebar">
+            <nav class="sidebar-nav">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="dashboard.html" class="active">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-car"></i>
+                            <span>My Cars</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-heart"></i>
+                            <span>Saved Cars</span>
+                            <span class="badge">5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Compare</span>
+                            <span class="badge compare-badge">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Purchases</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-file-invoice"></i>
+                            <span>Invoices</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Dashboard Content -->
+        <main class="dashboard-content">
+            <!-- Welcome Section -->
+            <div class="dashboard-welcome">
+                <h1>Welcome back, John!</h1>
+                <p>Here's what's happening with your account today.</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #2563eb, #3b82f6);">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>12</h3>
+                        <p>Cars Viewed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>5</h3>
+                        <p>Saved Cars</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>2</h3>
+                        <p>In Compare</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>1</h3>
+                        <p>Purchases</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="dashboard-section">
+                <div class="section-title">
+                    <h2>Recent Activity</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Viewed BMW 3 Series</h4>
+                            <p>2 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Saved Mercedes C-Class</h4>
+                            <p>1 day ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Added Audi A4 to Compare</h4>
+                            <p>2 days ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saved Cars -->
+            <div class="dashboard-section">
+                <div class="section-title">
+                    <h2>Your Saved Cars</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="dashboard-cars-grid">
+                    <div class="dashboard-car-card">
+                        <div class="car-image">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400&q=80" alt="BMW 3 Series">
+                            <button class="remove-saved"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="car-info">
+                            <h3>BMW 3 Series</h3>
+                            <p class="car-specs">2020 • 15,000 km</p>
+                            <div class="car-price">$28,500</div>
+                            <div class="car-actions">
+                                <a href="details.html" class="btn btn-outline btn-small">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-car-card">
+                        <div class="car-image">
+                            <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=400&q=80" alt="Mercedes C-Class">
+                            <button class="remove-saved"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="car-info">
+                            <h3>Mercedes C-Class</h3>
+                            <p class="car-specs">2019 • 20,000 km</p>
+                            <div class="car-price">$32,000</div>
+                            <div class="car-actions">
+                                <a href="details.html" class="btn btn-outline btn-small">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-car-card">
+                        <div class="car-image">
+                            <img src="https://th.bing.com/th/id/OIP.71r-yccgKNkPt1vwGAK4vgHaFj?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Audi A4">
+                            <button class="remove-saved"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="car-info">
+                            <h3>Audi A4</h3>
+                            <p class="car-specs">2021 • 12,000 km</p>
+                            <div class="car-price">$35,000</div>
+                            <div class="car-actions">
+                                <a href="details.html" class="btn btn-outline btn-small">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="dashboard-section">
+                <div class="section-title">
+                    <h2>Quick Actions</h2>
+                </div>
+                <div class="quick-actions">
+                    <a href="listing.html" class="action-card">
+                        <i class="fas fa-search"></i>
+                        <h4>Browse Cars</h4>
+                        <p>Find your next vehicle</p>
+                    </a>
+                    <a href="compare.html" class="action-card">
+                        <i class="fas fa-balance-scale"></i>
+                        <h4>Compare Cars</h4>
+                        <p>Compare up to 3 cars</p>
+                    </a>
+                    <a href="contact.html" class="action-card">
+                        <i class="fas fa-headset"></i>
+                        <h4>Get Support</h4>
+                        <p>Contact our team</p>
+                    </a>
+                    <a href="#" class="action-card">
+                        <i class="fas fa-cog"></i>
+                        <h4>Settings</h4>
+                        <p>Manage your account</p>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Compare Cars - UsedCar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-car"></i>
+                    <span>UsedCar</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="home2.html">Home 2</a></li>
+                <li><a href="listing.html">Browse Cars</a></li>
+                <li><a href="compare.html" class="active">Compare</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button type="button" class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon" id="darkModeIcon"></i>
+                </button>
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="signup.html" class="btn-signup">Sign Up</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Compare Cars</h1>
+            <p>Side-by-side comparison of your selected vehicles</p>
+        </div>
+    </section>
+
+    <!-- Compare Section -->
+    <section class="compare-section">
+        <div class="container">
+            <!-- Instructions Section -->
+            <div class="compare-instructions">
+                <div class="instructions-card">
+                    <div class="instruction-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="instruction-content">
+                        <h3>How to Compare Cars</h3>
+                        <p>Add up to 3 cars from the listing page to compare them side-by-side. Click the compare icon on any car card to add it to your comparison list.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compare Container -->
+            <div id="compareContainer">
+                <!-- Compare cars will be loaded here -->
+            </div>
+
+            <!-- Comparison Table Section -->
+            <div class="comparison-table-section" id="comparisonTable" style="display: none;">
+                <div class="section-header">
+                    <h2>Detailed Comparison</h2>
+                    <p>Compare all specifications side-by-side</p>
+                </div>
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Specification</th>
+                                <th id="tableCar1"></th>
+                                <th id="tableCar2"></th>
+                                <th id="tableCar3"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparisonTableBody">
+                            <!-- Table rows will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Compare Actions -->
+            <div class="compare-actions">
+                <a href="listing.html" class="btn btn-primary">Add More Cars</a>
+                <button class="btn btn-outline" onclick="clearCompare()">Clear All</button>
+            </div>
+
+            <!-- Comparison Tips -->
+            <div class="compare-tips">
+                <div class="section-header">
+                    <h2>Tips for Comparing Cars</h2>
+                    <p>Make an informed decision with these helpful tips</p>
+                </div>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h4>Price vs Value</h4>
+                        <p>Consider the total cost of ownership, not just the purchase price. Factor in insurance, maintenance, and fuel costs.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h4>Mileage Matters</h4>
+                        <p>Lower mileage generally means less wear and tear, but also consider the car's age and maintenance history.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-gas-pump"></i>
+                        </div>
+                        <h4>Fuel Efficiency</h4>
+                        <p>Compare fuel economy ratings. Electric and hybrid vehicles may have higher upfront costs but lower running costs.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Warranty & History</h4>
+                        <p>Check if the vehicle has remaining warranty and review its service history for peace of mind.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h4>Features & Options</h4>
+                        <p>Compare standard and optional features. Consider what's essential for your needs and lifestyle.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Resale Value</h4>
+                        <p>Research depreciation rates. Some brands and models hold their value better than others over time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="compare-benefits">
+                <div class="benefits-content">
+                    <div class="benefits-text">
+                        <h2>Why Compare Before You Buy?</h2>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Make Informed Decisions</h4>
+                                <p>See all specifications, prices, and features in one place to make the best choice for your needs.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Save Time & Money</h4>
+                                <p>Compare multiple vehicles simultaneously without visiting multiple dealerships or websites.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Find the Best Deal</h4>
+                                <p>Easily spot price differences and value propositions across similar vehicles.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-image">
+                        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80" alt="Compare Cars">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-car"></i>
+                        <span>UsedCar</span>
+                    </div>
+                    <p>Your trusted marketplace for premium used cars. Quality verified, prices transparent.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="listing.html">Browse Cars</a></li>
+                        <li><a href="compare.html">Compare Cars</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@usedcar.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Car Street, Auto City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UsedCar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        function clearCompare() {
+            localStorage.removeItem('compareList');
+            loadCompareCars();
+            updateCompareBadge();
+        }
+    </script>
+</body>
+</html>

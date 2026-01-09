@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>UsedCar - Premium Used Car Marketplace</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-car"></i>
+                    <span>UsedCar</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="home2.html">Home 2</a></li>
+                <li><a href="listing.html">Browse Cars</a></li>
+                <li><a href="compare.html">Compare</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button type="button" class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon" id="darkModeIcon"></i>
+                </button>
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="signup.html" class="btn-signup">Sign Up</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Find Your Perfect <span class="highlight">Used Car</span></h1>
+            <p class="hero-subtitle">Premium quality vehicles, verified sellers, trusted marketplace</p>
+            <div class="hero-buttons">
+                <a href="listing.html" class="btn btn-primary">Browse Cars</a>
+                <a href="home2.html" class="btn btn-secondary">View Home 2</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80" alt="Premium Car">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose UsedCar?</h2>
+                <p>Your trusted partner in finding the perfect vehicle</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Verified Sellers</h3>
+                    <p>All our sellers are verified and trusted. Buy with confidence.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Quality Inspection</h3>
+                    <p>Every car undergoes thorough quality checks before listing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive pricing with transparent deals and no hidden costs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support for all your queries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cars Section -->
+    <section class="featured-cars">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Vehicles</h2>
+                <p>Handpicked premium cars just for you</p>
+            </div>
+            <div class="cars-grid">
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80" alt="BMW 3 Series">
+                        <span class="car-badge">Featured</span>
+                    </div>
+                    <div class="car-info">
+                        <h3>BMW 3 Series</h3>
+                        <p class="car-specs">2020 • 15,000 km • Petrol</p>
+                        <div class="car-price">$28,500</div>
+                        <div class="car-actions">
+                            <a href="details.html" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80" alt="Mercedes C-Class">
+                        <span class="car-badge">Premium</span>
+                    </div>
+                    <div class="car-info">
+                        <h3>Mercedes C-Class</h3>
+                        <p class="car-specs">2019 • 20,000 km • Diesel</p>
+                        <div class="car-price">$32,000</div>
+                        <div class="car-actions">
+                            <a href="details.html" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://th.bing.com/th/id/OIP.71r-yccgKNkPt1vwGAK4vgHaFj?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Audi A4">
+                        <span class="car-badge">New Arrival</span>
+                    </div>
+                    <div class="car-info">
+                        <h3>Audi A4</h3>
+                        <p class="car-specs">2021 • 12,000 km • Petrol</p>
+                        <div class="car-price">$35,000</div>
+                        <div class="car-actions">
+                            <a href="details.html" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://cdn.motor1.com/images/mgl/qpGBL/s1/tesla-model-3-gray-2.jpg" alt="Tesla Model 3">
+                        <span class="car-badge">Electric</span>
+                    </div>
+                    <div class="car-info">
+                        <h3>Tesla Model 3</h3>
+                        <p class="car-specs">2022 • 8,000 km • Electric</p>
+                        <div class="car-price">$42,000</div>
+                        <div class="car-actions">
+                            <a href="details.html" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800&q=80" alt="Toyota Camry">
+                        <span class="car-badge">Featured</span>
+                    </div>
+                    <div class="car-info">
+                        <h3>Toyota Camry</h3>
+                        <p class="car-specs">2020 • 25,000 km • Petrol</p>
+                        <div class="car-price">$22,000</div>
+                        <div class="car-actions">
+                            <a href="details.html" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80" alt="Ford Mustang">
+                        <span class="car-badge">Premium</span>
+                    </div>
+                    <div class="car-info">
+                        <h3>Ford Mustang</h3>
+                        <p class="car-specs">2021 • 10,000 km • Petrol</p>
+                        <div class="car-price">$38,000</div>
+                        <div class="car-actions">
+                            <a href="details.html" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-footer">
+                <a href="listing.html" class="btn btn-primary">View All Cars</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Find Your Dream Car?</h2>
+                <p>Join thousands of satisfied customers and start your journey today</p>
+                <a href="signup.html" class="btn btn-primary btn-large">Get Started Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-car"></i>
+                        <span>UsedCar</span>
+                    </div>
+                    <p>Your trusted marketplace for premium used cars. Quality verified, prices transparent.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="listing.html">Browse Cars</a></li>
+                        <li><a href="compare.html">Compare Cars</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@usedcar.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Car Street, Auto City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UsedCar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
