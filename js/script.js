@@ -24,8 +24,8 @@ function toggleDarkMode() {
 
 // Update dark mode icon
 function updateDarkModeIcon(isDark) {
-    // Update all dark mode icons on the page
-    var icons = document.querySelectorAll('#darkModeIcon');
+    // Update all dark mode icons on the page (both desktop and mobile)
+    var icons = document.querySelectorAll('#darkModeIcon, #darkModeIconMobile');
     icons.forEach(function(icon) {
         if (isDark) {
             icon.classList.remove('fa-moon');
@@ -39,8 +39,8 @@ function updateDarkModeIcon(isDark) {
 
 // Initialize dark mode on page load
 function setupDarkModeToggle() {
-    // Use event delegation for all dark mode toggle buttons
-    $(document).on('click', '.dark-mode-toggle, #darkModeToggle', function(e) {
+    // Use event delegation for all dark mode toggle buttons (desktop and mobile)
+    $(document).on('click', '.dark-mode-toggle, #darkModeToggle, #darkModeToggleMobile, .mobile-dark-toggle', function(e) {
         e.preventDefault();
         e.stopPropagation();
         toggleDarkMode();
@@ -58,8 +58,8 @@ $(document).ready(function() {
 window.addEventListener('DOMContentLoaded', function() {
     initDarkMode();
     
-    // Add click listeners to all dark mode toggles
-    var toggles = document.querySelectorAll('.dark-mode-toggle, #darkModeToggle');
+    // Add click listeners to all dark mode toggles (desktop and mobile)
+    var toggles = document.querySelectorAll('.dark-mode-toggle, #darkModeToggle, #darkModeToggleMobile, .mobile-dark-toggle');
     toggles.forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
@@ -90,7 +90,15 @@ $('#navToggle').click(function() {
 
 // Close mobile menu when clicking on a link
 $('.nav-menu a').click(function() {
-    if ($(window).width() <= 768) {
+    if ($(window).width() <= 1024) {
+        $('#navMenu').removeClass('active');
+        $('#navToggle').removeClass('active');
+    }
+});
+
+// Close mobile menu when clicking on login/signup links (but not dark mode toggle)
+$('.nav-mobile-auth a').click(function() {
+    if ($(window).width() <= 1024) {
         $('#navMenu').removeClass('active');
         $('#navToggle').removeClass('active');
     }
@@ -263,10 +271,10 @@ if (document.getElementById('contactForm')) {
 var carData = [
     { id: 1, make: 'BMW', model: '3 Series', year: 2020, price: 28500, fuel: 'Petrol', mileage: 15000, image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80' },
     { id: 2, make: 'Mercedes', model: 'C-Class', year: 2019, price: 32000, fuel: 'Diesel', mileage: 20000, image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80' },
-    { id: 3, make: 'Audi', model: 'A4', year: 2021, price: 35000, fuel: 'Petrol', mileage: 12000, image: 'https://images.unsplash.com/photo-1606664515524-ed4f68c9c92a?w=800&q=80' },
+    { id: 3, make: 'Audi', model: 'A4', year: 2021, price: 35000, fuel: 'Petrol', mileage: 12000, image: 'https://www.motortrend.com/uploads/sites/5/2019/05/2020-Audi-A4-Euro-spec-front-three-quarter-e1557946837223.jpg' },
     { id: 4, make: 'Tesla', model: 'Model 3', year: 2022, price: 42000, fuel: 'Electric', mileage: 8000, image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&q=80' },
     { id: 5, make: 'Toyota', model: 'Camry', year: 2020, price: 22000, fuel: 'Petrol', mileage: 25000, image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800&q=80' },
-    { id: 6, make: 'Honda', model: 'Accord', year: 2019, price: 24000, fuel: 'Petrol', mileage: 30000, image: 'https://images.unsplash.com/photo-1606664515524-ed4f68c9c92a?w=800&q=80' },
+    { id: 6, make: 'Honda', model: 'Accord', year: 2019, price: 24000, fuel: 'Petrol', mileage: 30000, image: 'https://i.redd.it/na8640zs487a1.jpg' },
     { id: 7, make: 'Ford', model: 'Mustang', year: 2021, price: 38000, fuel: 'Petrol', mileage: 10000, image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80' },
     { id: 8, make: 'Volkswagen', model: 'Passat', year: 2020, price: 26000, fuel: 'Diesel', mileage: 18000, image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80' }
 ];
