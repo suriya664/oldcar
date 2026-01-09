@@ -2702,7 +2702,7 @@ body.dark-mode .auth-card .dark-mode-toggle:hover {
     margin: 0 auto;
     padding: 1rem var(--spacing-md);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
 }
@@ -2711,8 +2711,8 @@ body.dark-mode .auth-card .dark-mode-toggle:hover {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    justify-content: center;
-    width: 100%;
+    justify-content: flex-start;
+    width: auto;
 }
 
 .dashboard-menu-toggle {
