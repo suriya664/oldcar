@@ -40,7 +40,7 @@ function updateDarkModeIcon(isDark) {
 // Initialize dark mode on page load
 function setupDarkModeToggle() {
     // Use event delegation for all dark mode toggle buttons (desktop and mobile)
-    $(document).on('click', '.dark-mode-toggle, #darkModeToggle, #darkModeToggleMobile, .mobile-dark-toggle', function(e) {
+    $(document).on('click', '.dark-mode-toggle, .dark-mode-toggle-mobile, #darkModeToggle, #darkModeToggleMobile', function(e) {
         e.preventDefault();
         e.stopPropagation();
         toggleDarkMode();
@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', function() {
     initDarkMode();
     
     // Add click listeners to all dark mode toggles (desktop and mobile)
-    var toggles = document.querySelectorAll('.dark-mode-toggle, #darkModeToggle, #darkModeToggleMobile, .mobile-dark-toggle');
+    var toggles = document.querySelectorAll('.dark-mode-toggle, .dark-mode-toggle-mobile, #darkModeToggle, #darkModeToggleMobile');
     toggles.forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();

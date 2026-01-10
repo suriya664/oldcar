@@ -263,38 +263,23 @@ a {
     display: none;
 }
 
-.nav-mobile-auth .mobile-dark-toggle {
-    width: 100%;
-    padding: 0.6rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background-color: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-    font-family: var(--font-primary);
-    font-size: 1rem;
-}
-
-.nav-mobile-auth .mobile-dark-toggle:hover {
-    background-color: var(--primary);
-    color: var(--white);
+.nav-mobile-auth {
+    text-align: center;
 }
 
 .nav-mobile-auth .mobile-login,
 .nav-mobile-auth .mobile-signup {
     display: block;
-    width: 100%;
-    padding: 0.6rem 1rem;
+    width: auto;
+    max-width: 180px;
+    min-width: 150px;
+    padding: 0.5rem 0.875rem;
     text-align: center;
     border-radius: 8px;
     font-weight: 500;
     transition: var(--transition);
+    font-size: 0.875rem;
+    margin: 0 auto;
 }
 
 .nav-mobile-auth .mobile-login {
@@ -309,14 +294,28 @@ a {
 }
 
 .nav-mobile-auth .mobile-dashboard {
-    background-color: transparent;
+    display: block;
+    width: auto;
+    max-width: 200px;
+    min-width: 170px;
+    padding: 0.625rem 1.25rem;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--transition);
+    font-size: 0.9375rem;
+    margin: 0 auto;
+    letter-spacing: 0.02em;
     color: var(--secondary);
     border: 2px solid var(--secondary);
+    background-color: transparent;
 }
 
 .nav-mobile-auth .mobile-dashboard:hover {
     background-color: var(--secondary);
     color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
 }
 
 .nav-mobile-auth .mobile-signup {
@@ -355,8 +354,15 @@ a {
     background-color: var(--bg-light);
 }
 
-.nav-toggle {
+.nav-toggle-wrapper {
     display: none;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.nav-toggle {
+    display: flex;
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
@@ -368,6 +374,28 @@ a {
     background-color: var(--dark);
     border-radius: 2px;
     transition: var(--transition);
+}
+
+.dark-mode-toggle-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 2px solid var(--gray-lighter);
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--dark);
+    font-size: 1.125rem;
+    padding: 0;
+}
+
+.dark-mode-toggle-mobile:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background-color: var(--bg-light);
 }
 
 /* ============================================
@@ -875,22 +903,32 @@ body.dark-mode .stats .stat-label {
     .nav-mobile-auth {
         display: block !important;
         width: 100%;
-        padding: 0.4rem var(--spacing-md);
+        padding: 0.6rem var(--spacing-md);
         margin: 0;
-    }
-
-    .nav-mobile-auth .mobile-dark-toggle {
-        width: 100%;
-        margin: 0;
+        text-align: center;
     }
 
     .nav-mobile-auth .mobile-login,
     .nav-mobile-auth .mobile-signup {
-        width: 100%;
-        margin: 0;
+        width: auto;
+        max-width: 180px;
+        min-width: 150px;
+        margin: 0 auto;
+        font-size: 0.875rem;
+        padding: 0.5rem 0.875rem;
     }
 
-    .nav-toggle {
+    .nav-mobile-auth .mobile-dashboard {
+        width: auto;
+        max-width: 200px;
+        min-width: 170px;
+        margin: 0 auto;
+        font-size: 0.9375rem;
+        padding: 0.625rem 1.25rem;
+        letter-spacing: 0.02em;
+    }
+
+    .nav-toggle-wrapper {
         display: flex !important;
         order: 3;
         margin-left: auto;
@@ -933,21 +971,31 @@ body.dark-mode .stats .stat-label {
     .nav-mobile-auth {
         display: block !important;
         width: 100%;
-        padding: 0.4rem var(--spacing-md);
-    }
-
-    .nav-mobile-auth .mobile-dark-toggle {
-        width: 100%;
-        margin: 0;
+        padding: 0.6rem var(--spacing-md);
+        text-align: center;
     }
 
     .nav-mobile-auth .mobile-login,
     .nav-mobile-auth .mobile-signup {
-        width: 100%;
-        margin: 0;
+        width: auto;
+        max-width: 180px;
+        min-width: 150px;
+        margin: 0 auto;
+        font-size: 0.875rem;
+        padding: 0.5rem 0.875rem;
     }
 
-    .nav-toggle {
+    .nav-mobile-auth .mobile-dashboard {
+        width: auto;
+        max-width: 200px;
+        min-width: 170px;
+        margin: 0 auto;
+        font-size: 0.9375rem;
+        padding: 0.625rem 1.25rem;
+        letter-spacing: 0.02em;
+    }
+
+    .nav-toggle-wrapper {
         display: flex;
     }
 
@@ -3947,16 +3995,6 @@ body.dark-mode .btn-dashboard:hover {
 }
 
 /* Dark mode for mobile auth items */
-body.dark-mode .nav-mobile-auth .mobile-dark-toggle {
-    border-color: #475569;
-    color: #e2e8f0;
-}
-
-body.dark-mode .nav-mobile-auth .mobile-dark-toggle:hover {
-    background-color: var(--primary);
-    color: var(--white);
-    border-color: var(--primary);
-}
 
 body.dark-mode .nav-mobile-auth .mobile-login {
     color: var(--primary-light);
@@ -3989,15 +4027,21 @@ body.dark-mode .nav-mobile-auth .mobile-signup:hover {
     background-color: var(--primary-dark);
 }
 
-body.dark-mode .dark-mode-toggle {
+body.dark-mode .dark-mode-toggle,
+body.dark-mode .dark-mode-toggle-mobile {
     border-color: #475569;
     color: #e2e8f0;
 }
 
-body.dark-mode .dark-mode-toggle:hover {
+body.dark-mode .dark-mode-toggle:hover,
+body.dark-mode .dark-mode-toggle-mobile:hover {
     border-color: var(--primary-light);
     color: var(--primary-light);
     background-color: #1e293b;
+}
+
+body.dark-mode .nav-toggle span {
+    background-color: #e2e8f0;
 }
 
 body.dark-mode .container {
